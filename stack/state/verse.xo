@@ -1,0 +1,56 @@
+
+fetch ../../field
+  fetch /field/state
+    catch field state
+
+match bound
+  match crown
+    match field, field state
+    match field, field store
+    match field, field still
+
+match state
+  match brand, brand state
+    match write, write trace
+      throw trace
+    match field, field build
+    throw state
+
+match store
+  match brand, brand store
+    match write, write trace
+      throw trace
+    match field, field build
+    throw store
+
+match still
+  match brand, brand still
+    match write, write trace
+      throw trace
+    match field, field build
+    throw still
+
+catch bound
+  catch state
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      throw build
+  catch store
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      mount still, black
+      throw build
+  catch still
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      mount still, white
+      throw build

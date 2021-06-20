@@ -1,0 +1,125 @@
+
+fetch @mountbuild/drive/hatch/mount
+  catch match mount
+  catch catch mount
+
+match claim
+  match slate
+    slate match-claim-block
+
+match cross
+  match brand, brand cross
+    match brand
+      throw brand
+
+match fetch
+  match brand, brand fetch
+    match brand
+      throw brand
+
+match check
+  match brand, brand check
+    match brand
+      throw brand
+    match chain
+      match field, field mount
+        throw mount
+
+match cause
+  match brand, brand cause
+    match brand
+      throw brand
+    match chain
+      match field, field mount
+        throw mount
+
+match match
+  match brand, brand cause
+    match brand
+      throw brand
+    match slate
+      slate match-claim-block
+
+slate match-claim-block
+  match chain
+    match crown
+      match field, field cross
+        throw cross
+      match field, field fetch
+        throw fetch
+      match field, field check
+        throw check
+      match field, field cause
+        throw cause
+      match field, field match
+        throw match
+
+catch claim
+  catch brand
+    store brand
+  catch cross, field cross
+    stack claim
+  catch fetch, field fetch
+    stack claim
+  catch check, field check
+    stack claim
+  catch cause, field cause
+    stack claim
+  catch match, field match
+    stack claim
+  build claim-class
+    mount brand, share brand
+    mount claim, share claim
+    raise build
+
+catch cross
+  catch brand
+    store brand
+  build cross-claim
+    mount brand, share brand
+    raise build
+
+catch fetch
+  catch brand
+    store brand
+  build fetch-claim
+    mount brand, share brand
+    raise build
+
+catch check
+  catch brand
+    store brand
+  catch mount, field mount
+    stack mount
+  build check-claim
+    mount brand, share brand
+    mount mount, share mount
+    raise build
+
+catch cause
+  catch brand
+    store brand
+  catch mount, field mount
+    stack mount
+  build cause-claim
+    mount brand, share brand
+    mount mount, share mount
+    raise build
+
+catch match
+  catch brand
+    store brand
+  catch cross, field cross
+    stack claim
+  catch fetch, field fetch
+    stack claim
+  catch check, field check
+    stack claim
+  catch cause, field cause
+    stack claim
+  catch match, field match
+    stack claim
+  build match-claim
+    mount brand, share brand
+    mount claim, share claim
+    raise build

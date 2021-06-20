@@ -1,0 +1,163 @@
+
+hatch stack
+
+match stack
+  match brand, brand stack
+    match write, write stack-trace
+      throw trace
+    match weave
+      match field, field brief
+        throw brief
+      match chain
+        match field, field brand
+          throw brand
+      match chain
+        match field, field drive
+          throw drive
+      match chain
+        match field, field verse
+          throw verse
+      match field, field start
+        throw start
+      match chain
+        match field, field match
+          throw match
+      match field, field draft
+        throw draft
+      match field, field flash
+        throw flash
+      match chain
+        match field, field share
+          throw share
+
+match brief
+  match brand, brand brief
+    match write, write verse
+      throw write
+    throw brief
+
+match drive
+  match brand, brand drive
+    match write, write verse
+      throw write
+    throw drive
+
+match verse
+  match brand, brand verse
+    match write, write trace
+      throw trace
+    throw verse
+
+match start
+  match brand, brand start
+    match write, write trace
+      throw trace
+    throw start
+
+match match
+  match brand, brand match
+    match write, write trace
+      throw trace
+    throw match
+
+match draft
+  match brand, brand draft
+    match write, write trace
+      throw trace
+    throw draft
+
+match flash
+  match brand, brand flash
+    match write, write trace
+      throw trace
+    throw flash
+
+match share
+  match brand, brand share
+    match write, write verse
+      throw write
+    throw share
+
+match stack-trace
+  match write, write |@|
+  match field, field stack-trace-brand
+  match write, write |/|
+  match field, field stack-trace-brand
+
+match stack-trace-brand
+  match field, field write-block
+  match weave
+    match field, field write-block
+    match write, |-|
+
+match write-block
+  match crown
+    match write, |a|
+    match write, |b|
+    match write, |c|
+    match write, |d|
+    match write, |e|
+    match write, |f|
+    match write, |g|
+    match write, |h|
+    match write, |i|
+    match write, |j|
+    match write, |k|
+    match write, |l|
+    match write, |m|
+    match write, |n|
+    match write, |o|
+    match write, |p|
+    match write, |q|
+    match write, |r|
+    match write, |s|
+    match write, |t|
+    match write, |u|
+    match write, |v|
+    match write, |w|
+    match write, |x|
+    match write, |y|
+    match write, |z|
+
+catch stack
+  catch trace
+    store trace
+  catch brief
+    catch write
+      store brief
+  catch brand
+    catch write
+      stack brand
+  catch drive
+    catch write
+      stack drive
+  catch verse
+    catch trace
+      stack verse
+  catch start
+    catch trace
+      store start
+  catch match
+    catch trace
+      stack match
+  catch draft
+    catch trace
+      store draft
+  catch flash
+    catch trace
+      store flash
+  catch share
+    catch write
+      stack share
+  build stack
+    mount trace, share trace
+    mount brief, share brief
+    mount brand, share brand
+    mount drive, share drive
+    mount verse, share verse
+    mount start, share start
+    mount match, share match
+    mount draft, share draft
+    mount flash, share flash
+    mount share, share share
+    throw build

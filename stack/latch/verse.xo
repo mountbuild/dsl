@@ -1,0 +1,109 @@
+
+match latch
+  start brand
+
+  match brand, brand share brand
+    match brand
+      throw brand
+    match weave
+      match crown
+        match field, field field
+          throw field
+        match field, field crown
+          throw crown
+        match field, field chain
+          throw chain
+        match field, field hatch
+          throw hatch
+        match field, field weave
+          throw weave
+      match field, field state
+        throw state
+
+match state
+  match brand, brand state
+    match brand
+      store brand
+  build state
+    mount brand, share brand
+    throw build
+
+match field
+  match brand, brand field
+    match brand
+      throw brand
+    throw field
+
+match crown
+  match brand, brand crown
+    match chain
+      match field, field field
+    throw crown
+
+match chain
+  match brand, brand chain
+    match brand
+      throw brand
+    throw chain
+
+match hatch
+  match brand, brand hatch
+    match brand
+      throw brand
+    throw hatch
+
+match weave
+  match brand, brand weave
+    match brand
+      throw brand
+    throw weave
+
+catch latch
+  catch brand
+    store brand
+  catch field, field field
+    store match
+  catch crown, field crown
+    store match
+  catch chain, field chain
+    store match
+  catch hatch, field hatch
+    store match
+  catch weave, field weave
+    store match
+  catch state, field state
+    store state
+  build mount
+    mount brand, share brand
+    mount match, share match
+    mount state, share state
+    throw build
+
+catch field
+  catch brand
+    store field-brand
+  build match-field
+    mount field, share field-brand
+    throw build
+
+catch crown
+  catch field
+    catch brand
+      store field-brand
+    build match-field
+      mount field, share field-brand
+      stack crown-match
+  build match-crown
+    mount match, share crown-match
+    throw build
+
+catch chain
+  catch field
+    catch brand
+      store field-brand
+    build match-field
+      mount field, share field-brand
+      stack chain-match
+  build match-chain
+    mount match, share chain-match
+    throw build
