@@ -19,18 +19,3 @@ match clear
     match write, write trace
       throw trace
     throw clear
-
-catch mount
-  catch trace
-    store theme
-  catch match
-    catch trace
-      stack match
-  catch clear
-    catch trace
-      stack clear
-  build mount
-    mount theme, shift theme
-    mount match, shift match
-    mount clear, shift clear
-    throw build

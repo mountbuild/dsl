@@ -12,13 +12,3 @@ match mount
     match field, field build
       throw state
     throw mount
-
-catch mount
-  catch trace
-    store trace
-  catch state, field build
-    store build
-  build mount
-    mount trace, share trace
-    mount build, share build
-    throw build

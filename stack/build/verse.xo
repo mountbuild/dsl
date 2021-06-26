@@ -28,8 +28,3 @@ match build
         throw state
       match field, field lease
         throw state
-
-catch build
-  catch state
-    store state
-  share state
