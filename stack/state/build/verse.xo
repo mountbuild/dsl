@@ -1,0 +1,25 @@
+
+catch bound
+  catch state
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      throw build
+  catch store
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      mount still, black
+      throw build
+  catch still
+    catch trace, store trace
+    catch build, store build
+    build bound
+      mount trace, shift trace
+      mount build, shift build
+      mount still, white
+      throw build

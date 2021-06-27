@@ -1,0 +1,23 @@
+
+catch field
+  catch brand
+    store brand
+  catch field, field field-brand
+    stack field
+  catch field, field state
+    stack state
+  catch field, field force
+    stack force
+  build field
+    mount brand, share brand
+    mount field, share field
+    mount state, share state
+    mount force, share force
+    raise build
+
+catch field-brand
+  catch brand
+    store brand
+  build field-brand
+    mount brand, share brand
+    raise build

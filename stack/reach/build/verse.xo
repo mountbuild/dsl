@@ -1,0 +1,26 @@
+
+catch reach
+  catch share
+    catch trace
+      store trace
+    build share
+      mount trace, share trace
+      raise build
+  catch shift
+    catch trace
+      store trace
+    build shift
+      mount trace, share trace
+      raise build
+  catch clone
+    catch trace
+      store trace
+    build clone
+      mount trace, share trace
+      raise build
+  catch lease
+    catch trace
+      store trace
+    build lease
+      mount trace, share trace
+      raise build

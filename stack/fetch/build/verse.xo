@@ -1,0 +1,27 @@
+
+catch fetch
+  catch trace
+    store trace
+  catch fetch, field fetch
+    stack fetch
+  catch catch
+    catch brand
+      store catch-brand
+    catch store, field store
+      stack catch-store
+    build catch
+      mount brand, share catch-brand
+      mount store, share catch-store
+      stack catch
+  build fetch
+    mount trace, share trace
+    mount fetch, share fetch
+    mount catch, share catch
+    raise build
+
+catch store
+  catch brand
+    store brand
+  build store
+    mount brand, share brand
+    raise build

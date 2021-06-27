@@ -1,0 +1,50 @@
+
+catch block
+  catch brand
+    store brand
+  slate catch-chunk
+  build block
+    mount brand, share brand
+    mount block, share block
+    raise build
+
+catch check
+  catch brand
+    store brand
+  slate catch-chunk
+  build check-charm
+    mount brand, share trace
+    mount block, share block
+    raise build
+
+catch drive
+  catch trace
+    store trace
+  catch start, field start
+    stack start
+  catch block
+    stack block
+  build drive
+    mount brand, share trace
+    mount block, share block
+    raise build
+
+catch slate
+
+slate match-block
+  match chain
+    match crown
+      match field, field check
+        throw check
+      match field, field drive
+        throw drive
+      match field, field slate
+        throw slate
+
+slate catch-chunk
+  catch check, field check
+    stack block
+  catch drive, field drive
+    stack block
+  catch slate, field slate
+    stack block

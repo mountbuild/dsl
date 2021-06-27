@@ -1,0 +1,70 @@
+
+catch claim
+  catch brand
+    store brand
+  catch cross, field cross
+    stack claim
+  catch fetch, field fetch
+    stack claim
+  catch check, field check
+    stack claim
+  catch cause, field cause
+    stack claim
+  catch match, field match
+    stack claim
+  build claim-class
+    mount brand, share brand
+    mount claim, share claim
+    raise build
+
+catch cross
+  catch brand
+    store brand
+  build cross-claim
+    mount brand, share brand
+    raise build
+
+catch fetch
+  catch brand
+    store brand
+  build fetch-claim
+    mount brand, share brand
+    raise build
+
+catch check
+  catch brand
+    store brand
+  catch mount, field mount
+    stack mount
+  build check-claim
+    mount brand, share brand
+    mount mount, share mount
+    raise build
+
+catch cause
+  catch brand
+    store brand
+  catch mount, field mount
+    stack mount
+  build cause-claim
+    mount brand, share brand
+    mount mount, share mount
+    raise build
+
+catch match
+  catch brand
+    store brand
+  catch cross, field cross
+    stack claim
+  catch fetch, field fetch
+    stack claim
+  catch check, field check
+    stack claim
+  catch cause, field cause
+    stack claim
+  catch match, field match
+    stack claim
+  build match-claim
+    mount brand, share brand
+    mount claim, share claim
+    raise build
