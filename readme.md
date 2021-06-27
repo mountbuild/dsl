@@ -24,6 +24,140 @@
 
 ### Summary
 
+DSLs are one of the main structures for specifications in XO. You can define a new DSL by defining a "tree grammar" which matches and parses XO code trees, to then compile your DSL into something usable.
+
+### Examples
+
+#### The `force` DSL
+
+Forces are functions like you would find in JavaScript.
+
+```
+force find-fibonacci-via-loop
+  start i
+
+  state g, 0
+  state o, 1
+  state d
+
+  cause drive
+    catch check
+      cause check-state
+        mount build, share i
+        leave build
+    catch shift
+      store d, share o
+      cause mount-count
+        mount start, share g
+        mount front, share d
+        store o
+      store g, share d
+      cause floor-count
+        mount count, share i
+        store i
+
+  leave build, share g
+```
+
+#### The `field` DSL
+
+```
+field homomorphism
+  front g, field group
+  front h, field group
+
+  drive u, share g/set
+    drive v, share g/set
+      shift share g/product
+        mount a, share u
+        mount b, share v
+        store x
+      shift build
+        mount p, share x
+        store r
+      shift build
+        mount p, share u
+        store y
+      shift build
+        mount p, share v
+        store z
+      shift share h/product
+        mount a, share y
+        mount b, share z
+        store s
+      check equality
+        mount a, share r
+        mount b, share s
+
+field element-homomorphism
+  start g, field group
+  start h, field group
+  start p
+  start q
+
+  check homomorphism
+    mount g, share g
+    mount h, share h
+  check containment
+    mount set, share g/set
+    mount element, share p
+  check containment
+    mount set, share h/set
+    mount element, share q
+```
+
+#### The `fetch` DSL
+
+This is for importing stuff from other modules.
+
+```
+fetch @mountbuild/system
+  fetch /count
+    catch field count
+      store field integer
+
+  fetch /chain/block
+    catch field block
+```
+
+#### The `trace` DSL
+
+This is for parsing content.
+
+#### The `write` DSL
+
+This is for generating content.
+
+#### The `hatch` DSL
+
+This is for parsing XO trees.
+
+#### The `stack` DSL
+
+This is for writing package configuration.
+
+#### The `block` DSL
+
+This is for defining graphics components.
+
+```
+block page
+  block h1, write |hello world|
+  block ul
+    drive items
+      start item, brand block
+      block li
+        block text, share item
+```
+
+#### The `match-url` DSL
+
+#### The `match-cli` DSL
+
+#### The `serve` DSL
+
+#### The `theme` DSL
+
 ### Contribute
 
 Contributions are greatly welcomed. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/mountbuild/.github/blob/build/contributing.md) for more info if you are just writeing out coding.
