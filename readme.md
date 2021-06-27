@@ -281,6 +281,10 @@ mount store
       chain keyword, |compiler|
 ```
 
+#### The `http-request` DSL
+
+#### The `http-response` DSL
+
 ### Contribute
 
 Contributions are greatly welcomed. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/mountbuild/.github/blob/build/contributing.md) for more info if you are just writeing out coding.
