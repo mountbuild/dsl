@@ -30,7 +30,7 @@ DSLs are one of the main structures for specifications in XO. You can define a n
 
 #### The `force` DSL
 
-Forces are functions like you would find in JavaScript.
+Forces are functions like you would find in JavaScript. It is just compiled into an object graph initially (the AST). But then the force object graph is converted into executable code, so it is treated in a special way. However, the initial syntax of writing a force is like any other XO DSL.
 
 ```
 force find-fibonacci-via-loop
@@ -288,6 +288,13 @@ mount store
 ### Contribute
 
 Contributions are greatly welcomed. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/mountbuild/.github/blob/build/contributing.md) for more info if you are just writeing out coding.
+
+Some inspiration for other DSLs which can be created.
+
+- person
+- organization
+- event
+- molecule
 
 ### License
 
