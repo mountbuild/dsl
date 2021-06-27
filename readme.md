@@ -106,6 +106,37 @@ field element-homomorphism
     mount element, share q
 ```
 
+```
+field request
+  field base-request
+
+  start dry-run, field boolean
+  start reserved-instance-id, chain string
+    force white
+  start target-configuration
+    chain target-configuration-request
+
+  front query, field query
+    mount dry-run, share dry-run
+    mount reserved-instance-id, share reserved-instance-id
+    mount target-configuration, share target-configuration
+
+field query
+  start dry-run
+  start reserved-instance-id
+  start target-configuration
+
+  front |DryRun|, share dry-run
+  drive reserved-instance-id
+    start count
+    start block
+    front |ReservedInstanceId.:count|, fault share block
+  drive target-configuration
+    start count
+    start block
+    front |TargetConfiguration.:count|, fault share block
+```
+
 #### The `fetch` DSL
 
 This is for importing stuff from other modules.
@@ -168,7 +199,35 @@ block page
 
 #### The `match-url` DSL
 
+```
+match /code, hatch verse-chain
+  match /:tree, hatch verse-trace
+match /mesh, hatch cloud
+match /@:host, hatch host
+  match /:base, hatch base
+    match /:tree, hatch base-build
+match /host, hatch host-chain
+  match /:host, shift /@:host
+    match /zone, hatch host-zone
+    match /base, hatch base-chain
+      match /:base, shift /@:host/:base
+        match /zone, hatch base-zone
+match /lock, hatch mount
+  match /free, hatch mount-clear
+  match /host, shift /mount
+    match /:host, hatch mount-host
+```
+
 #### The `match-cli` DSL
+
+```
+match command
+  match -f, --foo
+    start value, field string
+
+  cause foo
+    mount foo, share value
+```
 
 #### The `serve` DSL
 
@@ -206,6 +265,20 @@ hatch text
   hatch reach, reach text
     hatch reach, reach watch
     hatch class, class text
+```
+
+#### The `state` DSL
+
+This is for defining static configuration.
+
+```
+mount store
+  mount domain-url, |https://show.land|
+  mount page
+    mount stone
+      mount title, |The Stone|
+      chain keyword, |stone|
+      chain keyword, |compiler|
 ```
 
 ### Contribute
