@@ -136,6 +136,22 @@ This is for parsing XO trees.
 
 This is for writing package configuration.
 
+```
+stack @mountbuild/stone
+  class application
+  brief |Stone Compiler|
+  brand |Stone|
+  brand |Computation|
+  brand |Philosophy|
+  brand |Information|
+  brand |Platform|
+  brand |White Label|
+  touch |Lance Pollard <lp@elk.fm>|
+  mount ./mount
+  draft ./draft
+  flash ./flash/verse.svg
+```
+
 #### The `block` DSL
 
 This is for defining graphics components.
@@ -157,6 +173,40 @@ block page
 #### The `serve` DSL
 
 #### The `theme` DSL
+
+#### The `draft` DSL
+
+This is for writing documents.
+
+#### The `batch` URL
+
+This is for defining queries.
+
+```
+start trace
+
+match verse
+  match field, field verse
+    match brand, brand trace
+
+check verse
+  start verse, brand block
+
+  check is-equal
+    mount start, share verse/trace
+    mount front, share trace
+
+hatch verse
+  start verse, brand block
+
+  hatch reach, share verse
+    hatch class, class text
+
+hatch text
+  hatch reach, reach text
+    hatch reach, reach watch
+    hatch class, class text
+```
 
 ### Contribute
 
